@@ -84,6 +84,6 @@ public class MOBA_Challenger {
 					.forEach(z -> System.out.printf("- %s <::> %d%n", z.getKey(), z.getValue()));
 
 		});
-
+		sc.close();
 	}
 }

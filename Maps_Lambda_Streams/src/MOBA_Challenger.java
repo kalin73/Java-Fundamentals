@@ -34,14 +34,56 @@ public class MOBA_Challenger {
 				String name2 = arr[1].trim();
 
 				if (players.containsKey(name1) && players.containsKey(name2)) {
-					String positions1 = players.get(name1).keySet().toString();
-					System.out.println(positions1);
+					boolean match = false;
+					for (String st1 : players.get(name1).keySet()) {
+
+						for (String st2 : players.get(name2).keySet()) {
+
+							if (st1.equals(st2)) {
+								match = true;
+							}
+
+						}
+					}
+
+					if (match) {
+
+						if (players.get(name1).values().stream().mapToInt(x -> x).sum() > players.get(name2).values()
+								.stream().mapToInt(x -> x).sum()) {
+
+							players.remove(name2);
+
+						} else if (players.get(name1).values().stream().mapToInt(x -> x).sum() < players.get(name2)
+								.values().stream().mapToInt(x -> x).sum()) {
+
+							players.remove(name1);
+
+						}
+
+					}
 
 				}
 
 			}
-			 s = sc.nextLine();
+			s = sc.nextLine();
 		}
+		TreeMap<String, Integer> ranking = new TreeMap<>();
+
+		for (String b : players.keySet()) {
+
+			for (String st : players.get(b).keySet()) {
+
+				ranking.put(b, players.get(b).values().stream().mapToInt(x -> x).sum());
+			}
+
+		}
+
+		ranking.entrySet().stream().sorted((fs, se) -> se.getValue() - fs.getValue()).forEach((x) -> {
+			System.out.printf("%s: %d skill%n", x.getKey(), x.getValue());
+			players.get(x.getKey()).entrySet().stream().sorted((fs, se) -> se.getValue() - fs.getValue())
+					.forEach(z -> System.out.printf("- %s <::> %d%n", z.getKey(), z.getValue()));
+
+		});
 
 	}
 }

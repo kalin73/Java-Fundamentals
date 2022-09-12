@@ -1,5 +1,7 @@
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class zad19 {
 
@@ -10,7 +12,6 @@ public class zad19 {
 		int length = 1;
 		int max = 0;
 		int index = 0;
-
 		for (int i = 0; i < nums.length - 1; i++) {
 
 			if (nums[i] < nums[i + 1]) {

@@ -19,6 +19,7 @@ public class Studentss {
 		Collections.sort(students, Comparator.comparingDouble(Student::getGrade));
 		Collections.reverse(students);
 		students.forEach(x -> System.out.println(x));
+		sc.close();
 	}
 
 }

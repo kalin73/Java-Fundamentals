@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +9,7 @@ public class Raw_Data {
 		Car cr = new Car();
 		List<Car> cars = cr.addCar(sc);
 		cr.info(sc, cars);
-
+		sc.close();
 	}
 
 }
@@ -167,22 +166,6 @@ class Tyres {
 		}
 
 		return type;
-	}
-
-	public int getTire1Age() {
-		return tire1Age;
-	}
-
-	public int getTire2Age() {
-		return tire2Age;
-	}
-
-	public int getTire3Age() {
-		return tire3Age;
-	}
-
-	public int getTire4Age() {
-		return tire4Age;
 	}
 }
 

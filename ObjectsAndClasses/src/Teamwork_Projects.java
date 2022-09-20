@@ -76,7 +76,6 @@ class Team {
 				System.out.printf("Team %s has been created by %s!%n", teamName, creatorName);
 
 			}
-
 		}
 		return team;
 	}
@@ -92,7 +91,6 @@ class Team {
 
 			for (Team t : teams) {
 				if (t.getTeamName().equals(team)) {
-
 					teamExist = true;
 
 				}
@@ -100,7 +98,6 @@ class Team {
 					memberExist = true;
 
 				}
-
 			}
 			if (!teamExist) {
 				System.out.printf("Team %s does not exist!%n", team);
@@ -115,13 +112,10 @@ class Team {
 					if (t.getTeamName().equals(team)) {
 						t.getMembers().add(member);
 					}
-
 				}
-
 			}
 			input = sc.nextLine().split("->");
 		}
-
 	}
 
 	public void print(List<Team> teams) {
@@ -130,6 +124,7 @@ class Team {
 		String disbanded = "";
 		for (Team x : teams) {
 			if (x.getMembers().size() > 0) {
+				Collections.sort(x.getMembers());
 				System.out.println(x.getTeamName());
 				System.out.println("- " + x.getCreatorName());
 
@@ -137,7 +132,7 @@ class Team {
 					System.out.println("-- " + st);
 				}
 			} else {
-				disbanded = x.getTeamName() + "\n";
+				disbanded += x.getTeamName() + "\n";
 			}
 		}
 		System.out.println("Teams to disband:\n" + disbanded);

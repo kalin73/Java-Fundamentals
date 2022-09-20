@@ -125,6 +125,7 @@ class Engine {
 
 class Tyres {
 	private double tire1Pressure = 0.0;
+
 	private int tire1Age = 0;
 	private double tire2Pressure = 0.0;
 	private int tire2Age = 0;
@@ -166,6 +167,22 @@ class Tyres {
 		}
 
 		return type;
+	}
+
+	public int getTire1Age() {
+		return tire1Age;
+	}
+
+	public int getTire2Age() {
+		return tire2Age;
+	}
+
+	public int getTire3Age() {
+		return tire3Age;
+	}
+
+	public int getTire4Age() {
+		return tire4Age;
 	}
 }
 

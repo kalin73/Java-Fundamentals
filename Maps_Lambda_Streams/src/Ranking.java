@@ -42,7 +42,7 @@ public class Ranking {
 		int total = 0;
 
 		for (Map.Entry<String, LinkedHashMap<String, Integer>> user : map.entrySet()) {
-			int sum = user.getValue().values().stream().mapToInt(i ->i).sum();
+			int sum = user.getValue().values().stream().mapToInt(i -> i).sum();
 			if (sum > total) {
 				total = sum;
 			}
@@ -63,7 +63,7 @@ public class Ranking {
 			value.entrySet().stream().sorted((f, s) -> s.getValue() - f.getValue())
 					.forEach(i -> System.out.printf("#  %s -> %d%n", i.getKey(), i.getValue()));
 		});
-		
+
 		sc.close();
 	}
 

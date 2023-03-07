@@ -52,6 +52,7 @@ public class Multiply_Big_Number {
 		}
 		System.out.println(result);
 
+		sc.close();
 	}
 
 }

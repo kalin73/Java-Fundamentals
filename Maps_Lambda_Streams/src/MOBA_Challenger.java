@@ -71,7 +71,7 @@ public class MOBA_Challenger {
 
 		for (String b : players.keySet()) {
 
-			for (String st : players.get(b).keySet()) {
+			for (@SuppressWarnings("unused") String st : players.get(b).keySet()) {
 
 				ranking.put(b, players.get(b).values().stream().mapToInt(x -> x).sum());
 			}

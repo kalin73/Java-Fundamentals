@@ -1,8 +1,7 @@
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
+
 //NOT FINISHED!!!!
 public class Judge {
 
@@ -71,7 +70,8 @@ public class Judge {
 		}).forEach(i -> {
 			System.out.printf("%d. %s -> %d%n", counter.getAndIncrement(), i.getKey(), i.getValue());
 		});
-
+		
+		sc.close();
 	}
 
 }

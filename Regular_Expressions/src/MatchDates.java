@@ -4,24 +4,20 @@ import java.util.regex.Pattern;
 
 public class MatchDates {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String input = sc.nextLine();
+    public static void main(String[] args) {
+        final Scanner sc = new Scanner(System.in);
+        final String input = sc.nextLine();
+        final String regex = "(?<day>\\d{2})([.\\-/])(?<month>[A-Z][a-z]{2})\\2(?<year>\\d{4})";
 
-		String regex = "\\b(?<day>\\d{2})([-.\\/])(?<month>[A-Z][a-z]{2})\\2(?<year>[\\d]{4})\\b";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher dates = pattern.matcher(input);
+        final Pattern pattern = Pattern.compile(regex);
+        final Matcher matcher = pattern.matcher(input);
 
-		while (dates.find()) {
-			String day = dates.group("day");
-			String month = dates.group("month");
-			String year = dates.group("year");
+        while (matcher.find()) {
+            System.out.print("Day: " + matcher.group("day") + ", ");
+            System.out.print("Month: " + matcher.group("month") + ", ");
+            System.out.println("Year: " + matcher.group("year"));
+        }
 
-			System.out.printf("Day: %s, Month: %s, Year: %s%n", day, month, year);
-		}
-
-		sc.close();
-
-	}
+    }
 
 }

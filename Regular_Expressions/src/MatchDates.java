@@ -17,6 +17,8 @@ public class MatchDates {
             System.out.print("Month: " + matcher.group("month") + ", ");
             System.out.println("Year: " + matcher.group("year"));
         }
+        
+        sc.close();
 
     }
 

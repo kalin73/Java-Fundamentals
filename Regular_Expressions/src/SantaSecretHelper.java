@@ -6,7 +6,7 @@ public class SantaSecretHelper {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
-        String line = "";
+        String line;
         Pattern pattern = Pattern.compile("@([A-Za-z]+)[^@\\-!:>]+!([GN])!");
 
         while (!(line = sc.nextLine()).equals("end")) {
@@ -22,7 +22,7 @@ public class SantaSecretHelper {
                 }
             }
         }
-        
+
         sc.close();
     }
 }
